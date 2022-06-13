@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
     <script src="js/code.js"></script>
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- GLOBAL CONTAINER FOR THE HOLE PAGE -->
+    <div class="container" id="global-container">
+        <!-- MAIN MENU STAGE, FROM HERE YOU CLICK TO START TO PLAY. -->
+        <div id="main-stage" class="screen-stage">
+            <h1 id="main-title">BLACKJACK</h1>
+            <div id="mainmenu-options">
+                <ul>
+                    <li>
+                        <button id="play" onclick="displayNone('main-stage'); displayBlock('game-stage');">
+                            Play
+                        </button>
+                    </li>
+                    <li>
+                        <button id="credits" onclick="displayNone('main-stage'); displayBlock('credits-stage');">
+                            Credits
+                        </button>
+                    </li> 
+                </ul>
+            </div>
+            <h3 id="made-by">Made by <a href="https://www.instagram.com/juansetolarovic/" target="_blank">Wanse</a></h3>
+        </div>
+        <!-- END OF MAIN MENU STAGE -->
+
+        <!-- GAME STAGE, FROM HERE YOU'LL SEE THE GAME SCREEN MADE TO PLAY. -->
+        <div id="game-stage" class="screen-stage">
+            <p>ola</p>
+        </div>
+        <!-- END OF GAME STAGE -->
+        
+        <!-- CREDITS STAGE, FROM HERE YOU'LL JUST SEE THE CREDITS. -->
+        <div id="credits-stage" class="screen-stage">
+            <p>los credits my dawg</p>
+        </div>
+        <!-- END OF CREDITS STAGE -->
+    </div>
 </body>
 </html>

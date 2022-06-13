@@ -1,0 +1,38 @@
+/* NORMALIZING AND GLOBAL SETS */
+* {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#global-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* ALL THE STAGES DISAPPEAR, THEN I MADE THEM APPEAR ONE BY ONE BY THEIR IDs WHEN IT'S NECESSARY */
+.screen-stage {
+    display: none;
+}
+
+/* ------------------------------------------------------------------------------------------------- */
+
+/* --- MAIN MENU STAGE --- */
+#main-stage {
+    display: block;
+}
+
+#mainmenu-options ul {
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+}
+
+#mainmenu-options button {
+    margin: 3%;
+}
+
+/* --- GAME STAGE --- */

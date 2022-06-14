@@ -6,6 +6,7 @@
 
 body {
     background-color: #101010;
+    color: aliceblue;
 }
 
 p {
@@ -62,6 +63,16 @@ a {
     position: sticky;
 }
 
+.card {
+    display: block;
+    color: #101010;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+}
+
 #cpu-cards {
     top: 15%;
     position: sticky;
@@ -76,7 +87,7 @@ a {
 
 @media only screen and (min-width: 768px) {
     #cpu-card-one, #cpu-card-two, #cpu-card-three, #cpu-card-four{
-        width: 70%;
+        width: 40%;
         margin: auto;
     }
 }
@@ -84,7 +95,7 @@ a {
 @media only screen and (min-width: 768px) {
     #cpu-cards{
         top: 10%;
-        height: 35vh;
+        height: 5%;
     }
 }
 
@@ -102,7 +113,7 @@ a {
 
 @media only screen and (min-width: 768px) {
     #user-card-one, #user-card-two, #user-card-three, #user-card-four{
-        width: 70%;
+        width: 40%;
         margin: auto;
     }
 }
@@ -115,8 +126,8 @@ a {
 
 @media only screen and (min-width: 768px) {
     #user-cards{
-        top: 50%;
-        height: 35vh;
+        top: 60%;
+        height: 5%;
     }
 }
 

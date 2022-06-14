@@ -33,7 +33,7 @@ var playPressed = false;
 var seconds = 0;
 var cancel;
 
-function incrementSeconds() {
+function LoadingIncrementSeconds() {
     seconds += 1;
     console.log(seconds);
     if(seconds == 2){
@@ -48,11 +48,8 @@ function isPlayPressed() {
   playPressed = true;
   if(playPressed == true){
     displayBlock('loading-stage');
-    cancel = setInterval(incrementSeconds, 1000); 
+    cancel = setInterval(LoadingIncrementSeconds, 1000); 
   }
 }
-
-
-
 
 

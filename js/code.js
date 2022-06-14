@@ -36,7 +36,7 @@ var cancel;
 function incrementSeconds() {
     seconds += 1;
     console.log(seconds);
-    if(seconds == 3){
+    if(seconds == 2){
       displayBlock('game-stage');
       displayNone('loading-stage');
       clearInterval(cancel);

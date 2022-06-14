@@ -28,10 +28,10 @@ function backgroundColor(id, color) {
   document.getElementById(id).style.backgroundColor = color;
 }
 
-// COUNTER SETINTERVAL
+// LOADING SCREEN
 var playPressed = false;
 var seconds = 0;
-
+var cancel;
 
 function incrementSeconds() {
     seconds += 1;
@@ -39,6 +39,8 @@ function incrementSeconds() {
     if(seconds == 3){
       displayBlock('game-stage');
       displayNone('loading-stage');
+      clearInterval(cancel);
+      seconds = 0;
     }
 }
 
@@ -46,7 +48,7 @@ function isPlayPressed() {
   playPressed = true;
   if(playPressed == true){
     displayBlock('loading-stage');
-    var cancel = setInterval(incrementSeconds, 1000); 
+    cancel = setInterval(incrementSeconds, 1000); 
   }
 }
 

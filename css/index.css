@@ -1,6 +1,15 @@
 /* NORMALIZING AND GLOBAL SETS */
 * {
     margin: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: #101010;
+}
+
+p {
+    margin: 0;
 }
 
 a {
@@ -9,8 +18,7 @@ a {
 }
 
 #global-container {
-    display: flex;
-    justify-content: center;
+    /* empty */
 }
 
 /* ALL THE STAGES DISAPPEAR, THEN I MADE THEM APPEAR ONE BY ONE BY THEIR IDs WHEN IT'S NECESSARY */
@@ -22,6 +30,7 @@ a {
 
 /* --- MAIN MENU STAGE --- */
 #main-stage {
+    text-align: center;
     display: block;
 }
 
@@ -32,7 +41,113 @@ a {
 }
 
 #mainmenu-options button {
-    margin: 3%;
+    margin: 1%;
 }
 
+/* ------------------------------------------------------------------------------------------------- */
+
 /* --- GAME STAGE --- */
+
+#game-stage {
+    text-align: center;
+}
+
+#game-stage-background {
+    height: 100vh; 
+    background-color: #2938be;
+}
+
+#top-menu {
+    top: 0%;
+    position: sticky;
+}
+
+#cpu-cards {
+    top: 15%;
+    position: sticky;
+    height: 20vh;
+    
+}
+
+#cpu-card-one, #cpu-card-two, #cpu-card-three, #cpu-card-four{
+    border: 2px solid black;
+    height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    #cpu-card-one, #cpu-card-two, #cpu-card-three, #cpu-card-four{
+        width: 70%;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #cpu-cards{
+        top: 10%;
+        height: 35vh;
+    }
+}
+
+#bet {
+    top: 45%;
+    position: sticky;
+    height: 7vh;
+    align-items: center;
+}
+
+#user-card-one, #user-card-two, #user-card-three, #user-card-four{
+    border: 2px solid black;
+    height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    #user-card-one, #user-card-two, #user-card-three, #user-card-four{
+        width: 70%;
+        margin: auto;
+    }
+}
+
+#user-cards{
+    top: 60%;
+    position: sticky;
+    height: 20vh;
+}
+
+@media only screen and (min-width: 768px) {
+    #user-cards{
+        top: 50%;
+        height: 35vh;
+    }
+}
+
+#game-choices { 
+    top: 87%;
+    position: sticky;
+    height: 9vh;
+    align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+    #game-choices{
+        top: 90%;
+    }
+}
+
+#game-choices div {
+    height: 100%;
+}
+
+#game-choices div button {
+    width: 100%;
+    height: 100%;
+}
+
+#chips-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------------------------------------------------------------------------------------- */
+
+/* --- CREDITS STAGE --- */

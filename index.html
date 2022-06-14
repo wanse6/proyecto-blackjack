@@ -9,21 +9,27 @@
     <script src="js/code.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body id="body">
     <!-- GLOBAL CONTAINER FOR THE HOLE PAGE -->
-    <div class="container" id="global-container">
+    <div class="container-fluid" id="global-container">
+
+
+
+
         <!-- MAIN MENU STAGE, FROM HERE YOU CLICK TO START TO PLAY. -->
         <div id="main-stage" class="screen-stage">
             <h1 id="main-title">BLACKJACK</h1>
             <div id="mainmenu-options">
                 <ul>
                     <li>
-                        <button id="play" onclick="displayNone('main-stage'); displayBlock('game-stage');">
+                        <button id="play-button" onclick="displayFlex('loading-stage'); displayNone('main-stage'); displayNone('cpu-card-two');
+                        displayNone('cpu-card-three'); displayNone('cpu-card-four'); displayNone('user-card-two'); displayNone('user-card-three');
+                        displayNone('user-card-four'); isPlayPressed();">
                             Play
                         </button>
                     </li>
                     <li>
-                        <button id="credits" onclick="displayNone('main-stage'); displayBlock('credits-stage');">
+                        <button id="credits-button" onclick="displayNone('main-stage'); displayBlock('credits-stage');">
                             Credits
                         </button>
                     </li> 
@@ -33,17 +39,128 @@
         </div>
         <!-- END OF MAIN MENU STAGE -->
 
+
+
+        <!-- LOADING STAGE -->
+        <div id="loading-stage" class="screen-stage">
+            <p style="color: aliceblue; text-align: center;">loading...</p>
+        </div>
+        <!-- END OF LOADING STAGE -->
+
+
+
         <!-- GAME STAGE, FROM HERE YOU'LL SEE THE GAME SCREEN MADE TO PLAY. -->
         <div id="game-stage" class="screen-stage">
-            <p>ola</p>
+            <div id="game-stage-background" class="row">
+                <!-- MAIN SCREEN OF THE GAME -->
+                <div class="col-12">
+                    <div id="top-menu" class="row" style="height: 80px; align-items:center; text-align:center;">
+                        <div class="col-2">
+                            <button id="mainmenu-button" onclick="displayNone('game-stage'); displayBlock('main-stage');">
+                                Main menu
+                            </button>
+                        </div>
+                        <div class="col-8">
+                            <h1>BLACKJACK</h1>
+                        </div>
+                        <div class="col-2">
+                            <p id="your-turn">YOUR TURN</p>
+                            <p id="cpu-turn">CPU TURN</p>
+                        </div>
+                    </div>
+                    <div id="cpu-cards" class="row">
+                        <div class="col-3">
+                            <div id="cpu-card-one">
+                                CARTA 1
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="cpu-card-two">
+                                CARTA 2
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="cpu-card-three">
+                                CARTA 3
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="cpu-card-four">
+                                CARTA 4
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bet" class="row">
+                        <div class="col-4">
+
+                        </div>
+                        <div class="col-4" style="text-align: center;">
+                            <p>BET</p>
+                            <p id="bet-amount">0</p>
+                        </div>
+                        <div class="col-4">
+
+                        </div>
+                    </div>
+                    <div id="user-cards" class="row">
+                        <div class="col-3">
+                            <div id="user-card-one">
+                                CARTA 1
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="user-card-two">
+                                CARTA 2
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="user-card-three">
+                                CARTA 3
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="user-card-four">
+                                CARTA 4
+                            </div>
+                        </div>
+                    </div>
+                    <div id="game-choices" class="row">
+                        <div class="col-3">
+                            <button id="double">
+                                DOUBLE
+                            </button>
+                        </div>
+                        <div class="col-3">
+                            <button id="stand">
+                                STAND
+                            </button>
+                        </div>
+                        <div class="col-3">
+                            <button id="hit">
+                                HIT
+                            </button>
+                        </div>
+                        <div class="col-3" id="chips-container">
+                            <p>CHIPS:<span id="chips"> 0</span></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF MAIN SCREEN OF THE GAME -->
+            </div>
         </div>
         <!-- END OF GAME STAGE -->
+
+
         
         <!-- CREDITS STAGE, FROM HERE YOU'LL JUST SEE THE CREDITS. -->
-        <div id="credits-stage" class="screen-stage">
+        <div id="credits-stage" class="screen-stage" style="text-align: center;">
             <p>los credits my dawg</p>
         </div>
         <!-- END OF CREDITS STAGE -->
+
+
+
+
     </div>
 </body>
 </html>

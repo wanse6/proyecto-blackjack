@@ -24,7 +24,7 @@
                     <li>
                         <button id="play-button" onclick="displayFlex('loading-stage'); displayNone('main-stage'); displayNone('cpu-card-two');
                         displayNone('cpu-card-three'); displayNone('cpu-card-four'); displayNone('user-card-two'); displayNone('user-card-three');
-                        displayNone('user-card-four'); isPlayPressed();">
+                        displayNone('user-card-four'); isPlayPressed(); randomCard();">
                             Play
                         </button>
                     </li>
@@ -44,6 +44,64 @@
         <!-- LOADING STAGE -->
         <div id="loading-stage" class="screen-stage">
             <p style="color: aliceblue; text-align: center;">loading...</p>
+            
+            <!-- LOADING ALL CARDS IMAGES -->
+            <div style="display: none;">
+                <img id="az_de_corazon" src="img/cards/corazon/az_de_corazon.svg">
+                <img id="dos_de_corazon" src="img/cards/corazon/dos_de_corazon.svg">
+                <img id="tres_de_corazon" src="img/cards/corazon/tres_de_corazon.svg">
+                <img id="cuatro_de_corazon" src="img/cards/corazon/cuatro_de_corazon.svg">
+                <img id="cinco_de_corazon" src="img/cards/corazon/cinco_de_corazon.svg">
+                <img id="seis_de_corazon" src="img/cards/corazon/seis_de_corazon.svg">
+                <img id="siete_de_corazon" src="img/cards/corazon/siete_de_corazon.svg">
+                <img id="ocho_de_corazon" src="img/cards/corazon/ocho_de_corazon.svg">
+                <img id="nueve_de_corazon" src="img/cards/corazon/nueve_de_corazon.svg">
+                <img id="diez_de_corazon" src="img/cards/corazon/diez_de_corazon.svg">
+                <img id="j_de_corazon" src="img/cards/corazon/j_de_corazon.svg">
+                <img id="q_de_corazon" src="img/cards/corazon/q_de_corazon.svg">
+                <img id="k_de_corazon" src="img/cards/corazon/k_de_corazon.svg">
+                <img id="az_de_diamante" src="img/cards/diamante/az_de_diamante.svg">
+                <img id="dos_de_diamante" src="img/cards/diamante/dos_de_diamante.svg">
+                <img id="tres_de_diamante" src="img/cards/diamante/tres_de_diamante.svg">
+                <img id="cuatro_de_diamante" src="img/cards/diamante/cuatro_de_diamante.svg">
+                <img id="cinco_de_diamante" src="img/cards/diamante/cinco_de_diamante.svg">
+                <img id="seis_de_diamante" src="img/cards/diamante/seis_de_diamante.svg">
+                <img id="siete_de_diamante" src="img/cards/diamante/siete_de_diamante.svg">
+                <img id="ocho_de_diamante" src="img/cards/diamante/ocho_de_diamante.svg">
+                <img id="nueve_de_diamante" src="img/cards/diamante/nueve_de_diamante.svg">
+                <img id="diez_de_diamante" src="img/cards/diamante/diez_de_diamante.svg">
+                <img id="j_de_diamante" src="img/cards/diamante/j_de_diamante.svg">
+                <img id="q_de_diamante" src="img/cards/diamante/q_de_diamante.svg">
+                <img id="k_de_diamante" src="img/cards/diamante/k_de_diamante.svg">
+                <img id="az_de_pica" src="img/cards/pica/az_de_pica.svg">
+                <img id="dos_de_pica" src="img/cards/pica/dos_de_pica.svg">
+                <img id="tres_de_pica" src="img/cards/pica/tres_de_pica.svg">
+                <img id="cuatro_de_pica" src="img/cards/pica/cuatro_de_pica.svg">
+                <img id="cinco_de_pica" src="img/cards/pica/cinco_de_pica.svg">
+                <img id="seis_de_pica" src="img/cards/pica/seis_de_pica.svg">
+                <img id="siete_de_pica" src="img/cards/pica/siete_de_pica.svg">
+                <img id="ocho_de_pica" src="img/cards/pica/ocho_de_pica.svg">
+                <img id="nueve_de_pica" src="img/cards/pica/nueve_de_pica.svg">
+                <img id="diez_de_pica" src="img/cards/pica/diez_de_pica.svg">
+                <img id="j_de_pica" src="img/cards/pica/j_de_pica.svg">
+                <img id="q_de_pica" src="img/cards/pica/q_de_pica.svg">
+                <img id="k_de_pica" src="img/cards/pica/k_de_pica.svg">
+                <img id="az_de_trebol" src="img/cards/trebol/az_de_trebol.svg">
+                <img id="dos_de_trebol" src="img/cards/trebol/dos_de_trebol.svg">
+                <img id="tres_de_trebol" src="img/cards/trebol/tres_de_trebol.svg">
+                <img id="cuatro_de_trebol" src="img/cards/trebol/cuatro_de_trebol.svg">
+                <img id="cinco_de_trebol" src="img/cards/trebol/cinco_de_trebol.svg">
+                <img id="seis_de_trebol" src="img/cards/trebol/seis_de_trebol.svg">
+                <img id="siete_de_trebol" src="img/cards/trebol/siete_de_trebol.svg">
+                <img id="ocho_de_trebol" src="img/cards/trebol/ocho_de_trebol.svg">
+                <img id="nueve_de_trebol" src="img/cards/trebol/nueve_de_trebol.svg">
+                <img id="diez_de_trebol" src="img/cards/trebol/diez_de_trebol.svg">
+                <img id="j_de_trebol" src="img/cards/trebol/j_de_trebol.svg">
+                <img id="q_de_trebol" src="img/cards/trebol/q_de_trebol.svg">
+                <img id="k_de_trebol" src="img/cards/trebol/k_de_trebol.svg">
+            </div>
+            <!-- END OF LOADING ALL CARDS IMAGES -->
+
         </div>
         <!-- END OF LOADING STAGE -->
 
@@ -71,22 +129,22 @@
                     <div id="cpu-cards" class="row">
                         <div class="col-3">
                             <div id="cpu-card-one" class="card">
-                                <img src="img/cards/corazon/az_de_corazon.svg" alt="Az de corazon">
+                                <img id="cpu-one" src="img/cards/corazon/az_de_corazon.svg" alt="Az de corazon">
                             </div>
                         </div>
                         <div class="col-3">
                             <div id="cpu-card-two" class="card">
-                                CARTA 2
+                                <img id="cpu-two" src="img/cards/corazon/dos_de_corazon.svg" alt="Az de corazon">
                             </div>
                         </div>
                         <div class="col-3">
                             <div id="cpu-card-three" class="card">
-                                CARTA 3
+                                <img id="cpu-three" src="img/cards/corazon/tres_de_corazon.svg" alt="Az de corazon">
                             </div>
                         </div>
                         <div class="col-3">
                             <div id="cpu-card-four" class="card">
-                                CARTA 4
+                                <img id="cpu-four" src="img/cards/corazon/cuatro_de_corazon.svg" alt="Az de corazon">
                             </div>
                         </div>
                     </div>

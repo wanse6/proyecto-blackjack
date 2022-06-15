@@ -24,7 +24,7 @@
                     <li>
                         <button id="play-button" onclick="displayFlex('loading-stage'); displayNone('main-stage'); displayNone('cpu-card-two');
                         displayNone('cpu-card-three'); displayNone('cpu-card-four'); displayNone('user-card-two'); displayNone('user-card-three');
-                        displayNone('user-card-four'); isPlayPressed(); randomCard();">
+                        displayNone('user-card-four'); isPlayPressed(); randomCpuCard(); randomUserCard();">
                             Play
                         </button>
                     </li>
@@ -163,7 +163,7 @@
                     <div id="user-cards" class="row">
                         <div class="col-3">
                             <div id="user-card-one" class="card">
-                                <img src="img/cards/corazon/q_de_corazon.svg">
+                                <img id="user-one" src="img/cards/corazon/q_de_corazon.svg">
                             </div>
                         </div>
                         <div class="col-3">

@@ -1,6 +1,7 @@
 // GLOBAL VARIABLES
 var cardID;
 var random;
+var hand = 1;
 var cpu = 'cpu';
 var cpuCardPoints;
 var cpuCardPosition;
@@ -15,7 +16,7 @@ var userAvoidNum;
 var userAvoidNum2;
 var userAvoidNum3;
 var userPoints;
-var hand = 1;
+
 
 
 // INITIALIZING DISPLAY FUNCTIONS

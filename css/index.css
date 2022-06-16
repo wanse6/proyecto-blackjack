@@ -22,9 +22,9 @@ a {
     text-decoration: none;
 }
 
-#global-container {
-    /* empty */
-}
+/* #global-container {
+    
+} */
 
 /* ALL THE STAGES DISAPPEAR, THEN I MADE THEM APPEAR ONE BY ONE BY THEIR IDs WHEN IT'S NECESSARY */
 .screen-stage {

@@ -53,7 +53,7 @@ function isPlayPressed() {
 
 // RANDOMIZING CARDS
 function randomCpuCard() {
-  random = Math.floor(Math.random() * 5);
+  random = Math.floor(Math.random() * 52);
 
   while(random == cardValue){
     if(random == 51){
@@ -279,7 +279,7 @@ function randomCpuCard() {
 }
 
 function randomUserCard() {
-  random = Math.floor(Math.random() * 5);
+  random = Math.floor(Math.random() * 52);
 
   while(random == cardValue){
     if(random == 51){
@@ -288,7 +288,7 @@ function randomUserCard() {
       random = random + 1;
     }
   }
-  
+
   console.log(random);
 
   switch (random) {

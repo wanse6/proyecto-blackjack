@@ -78,11 +78,11 @@ function isPlayPressed() {
 function randomCard(who, repeatedID, repeatedID2, repeatedID3, repeatedID4, repeatedID5, repeatedID6, repeatedID7, repeatedID8) {
   random = Math.floor(Math.random() * 26);
 
-  if (who == user) {
-    console.log('random user before be changed: ' + random);
-  } else {
-    console.log('random cpu before be changed: ' + random);
-  }
+  if (who == cpu) {
+    console.log('CPU Card ID: ' + random);
+    } else {
+      console.log('USER Card ID: ' + random);
+      }
 
   while (random == cardID || random == repeatedID || random == repeatedID2 || random == repeatedID3 || random == repeatedID4 || random == repeatedID5 || random == repeatedID6 || random == repeatedID7 || random == repeatedID8) {
     if (random == 51) {
@@ -92,7 +92,6 @@ function randomCard(who, repeatedID, repeatedID2, repeatedID3, repeatedID4, repe
     }
   }
 
-  console.log('Card ID: ' + random);
 
   if (hand == 1) {
     userCardPosition = 'user-one';
@@ -682,10 +681,10 @@ function randomCard(who, repeatedID, repeatedID2, repeatedID3, repeatedID4, repe
       }
       break;
   }
-  if(who == user){
-    console.log('USER CARD POINTS: ' + userCardPoints);
-  } else {
+  if(who == cpu){
     console.log('CPU CARD POINTS: ' + cpuCardPoints);
+  } else {
+    console.log('USER CARD POINTS: ' + userCardPoints);
   }
 
   return cardID;
@@ -695,8 +694,8 @@ function randomCard(who, repeatedID, repeatedID2, repeatedID3, repeatedID4, repe
 
 // PASSING HANDS ONE BY ONE
 function firstHand() {
-  userAvoidNum = randomCard(user, userAvoidNum, cpuAvoidNum);
   cpuAvoidNum = randomCard(cpu, cpuAvoidNum, userAvoidNum);
+  userAvoidNum = randomCard(user, userAvoidNum, cpuAvoidNum);
   console.log('ID to avoid is: ' + userAvoidNum + ' and ' + cpuAvoidNum);
 }
 
@@ -704,8 +703,8 @@ function secondHand() {
   cpuPoints = cpuCardPoints;
   userPoints = userCardPoints;
   
-  userAvoidNum1 = randomCard(user, userAvoidNum, cpuAvoidNum, userAvoidNum1, cpuAvoidNum1);
   cpuAvoidNum1 = randomCard(cpu, cpuAvoidNum, userAvoidNum, cpuAvoidNum1, userAvoidNum1);
+  userAvoidNum1 = randomCard(user, userAvoidNum, cpuAvoidNum, userAvoidNum1, cpuAvoidNum1);
   console.log('ID to avoid is: ' + userAvoidNum + ' and ' + cpuAvoidNum + ' and ' + userAvoidNum1 + ' and ' + cpuAvoidNum1);
 
   // update cpu & user's points
@@ -720,8 +719,8 @@ function secondHand() {
 
 function thirdHand() {
   
-  userAvoidNum2 = randomCard(user, userAvoidNum, cpuAvoidNum, userAvoidNum1, cpuAvoidNum1, userAvoidNum2, cpuAvoidNum2);
   cpuAvoidNum2 = randomCard(cpu, cpuAvoidNum, userAvoidNum, cpuAvoidNum1, userAvoidNum1, userAvoidNum2, cpuAvoidNum2);
+  userAvoidNum2 = randomCard(user, userAvoidNum, cpuAvoidNum, userAvoidNum1, cpuAvoidNum1, userAvoidNum2, cpuAvoidNum2);
   console.log('ID to avoid is: ' + userAvoidNum + ' and ' + cpuAvoidNum + ' and ' + userAvoidNum1 + ' and ' + cpuAvoidNum1 + ' and ' + userAvoidNum2 + ' and ' + cpuAvoidNum2);
 
 
@@ -737,8 +736,8 @@ function thirdHand() {
 
 function fourthHand() {
   
-  userAvoidNum3 = randomCard(user, userAvoidNum, cpuAvoidNum, userAvoidNum1, cpuAvoidNum1, userAvoidNum2, cpuAvoidNum2, userAvoidNum3, cpuAvoidNum3);
   cpuAvoidNum3 = randomCard(cpu, cpuAvoidNum, userAvoidNum, cpuAvoidNum1, userAvoidNum1, cpuAvoidNum2, userAvoidNum2, cpuAvoidNum3, userAvoidNum3);
+  userAvoidNum3 = randomCard(user, userAvoidNum, cpuAvoidNum, userAvoidNum1, cpuAvoidNum1, userAvoidNum2, cpuAvoidNum2, userAvoidNum3, cpuAvoidNum3);
   console.log('ID to avoid is: ' + userAvoidNum + ' and ' + cpuAvoidNum + ' and ' + userAvoidNum1 + ' and ' + cpuAvoidNum1 + ' and ' + userAvoidNum2 + ' and ' + cpuAvoidNum2 + ' and ' + userAvoidNum3 + ' and ' + cpuAvoidNum3);
 
 
@@ -754,6 +753,7 @@ function fourthHand() {
 
 function nextHand() {
   hand = hand + 1;
+  console.log(' ');
   console.log('--> HAND N°' + hand + ' <--');
 
   if (hand == 2) {
@@ -775,3 +775,9 @@ function gameDecision() {
   }
 }
 
+function reset() {
+  hand = 1;
+  cpuPoints = 0;
+  userPoints = 0;
+  console.clear();
+}

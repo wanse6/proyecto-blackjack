@@ -76,7 +76,7 @@ function isPlayPressed() {
 
 // RANDOMIZING CARDS
 function randomCard(who, repeatedID, repeatedID2, repeatedID3, repeatedID4, repeatedID5, repeatedID6, repeatedID7, repeatedID8) {
-  random = Math.floor(Math.random() * 26);
+  random = Math.floor(Math.random() * 52);
 
   if (who == cpu) {
     console.log('CPU Card ID: ' + random);
@@ -396,288 +396,288 @@ function randomCard(who, repeatedID, repeatedID2, repeatedID3, repeatedID4, repe
       break;
     case 26:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/az_de_pica.svg';
+        cardID = 26;
+        userCardPoints = 10;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/az_de_pica.svg';
+        cardID = 26;
+        cpuCardPoints = 10;
       }
       break;
     case 27:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/dos_de_pica.svg';
+        cardID = 27;
+        userCardPoints = 2;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/dos_de_pica.svg';
+        cardID = 27;
+        cpuCardPoints = 2;
       }
       break;
     case 28:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/tres_de_pica.svg';
+        cardID = 28;
         userCardPoints = 3;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/tres_de_pica.svg';
+        cardID = 28;
         cpuCardPoints = 3;
       }
       break;
     case 29:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/cuatro_de_pica.svg';
+        cardID = 29;
+        userCardPoints = 4;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/cuatro_de_pica.svg';
+        cardID = 29;
+        cpuCardPoints = 4;
       }
       break;
     case 30:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/cinco_de_pica.svg';
+        cardID = 30;
+        userCardPoints = 5;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/cinco_de_pica.svg';
+        cardID = 30;
+        cpuCardPoints = 5;
       }
       break;
     case 31:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/seis_de_pica.svg';
+        cardID = 31;
+        userCardPoints = 6;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/seis_de_pica.svg';
+        cardID = 31;
+        cpuCardPoints = 6;
       }
       break;
     case 32:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/siete_de_pica.svg';
+        cardID = 32;
+        userCardPoints = 7;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/siete_de_pica.svg';
+        cardID = 32;
+        cpuCardPoints = 7;
       }
       break;
     case 33:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/ocho_de_pica.svg';
+        cardID = 33;
+        userCardPoints = 8;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/ocho_de_pica.svg';
+        cardID = 33;
+        cpuCardPoints = 8;
       }
       break;
     case 34:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/nueve_de_pica.svg';
+        cardID = 34;
+        userCardPoints = 9;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/nueve_de_pica.svg';
+        cardID = 34;
+        cpuCardPoints = 9;
       }
       break;
     case 35:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/diez_de_pica.svg';
+        cardID = 35;
+        userCardPoints = 10;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/diez_de_pica.svg';
+        cardID = 35;
+        cpuCardPoints = 10;
       }
       break;
     case 36:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/j_de_pica.svg';
+        cardID = 36;
+        userCardPoints = 10;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/j_de_pica.svg';
+        cardID = 36;
+        cpuCardPoints = 10;
       }
       break;
     case 37:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/q_de_pica.svg';
+        cardID = 37;
+        userCardPoints = 10;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/q_de_pica.svg';
+        cardID = 37;
+        cpuCardPoints = 10;
       }
       break;
     case 38:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/pica/k_de_pica.svg';
+        cardID = 38;
+        userCardPoints = 10;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/pica/k_de_pica.svg';
+        cardID = 38;
+        cpuCardPoints = 10;
       }
       break;
     case 39:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/az_de_trebol.svg';
+        cardID = 39;
+        userCardPoints = 10;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/az_de_trebol.svg';
+        cardID = 39;
+        cpuCardPoints = 10;
       }
       break;
     case 40:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/dos_de_trebol.svg';
+        cardID = 40;
+        userCardPoints = 2;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/dos_de_trebol.svg';
+        cardID = 40;
+        cpuCardPoints = 2;
       }
       break;
     case 41:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/tres_de_trebol.svg';
+        cardID = 41;
         userCardPoints = 3;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/tres_de_trebol.svg';
+        cardID = 41;
         cpuCardPoints = 3;
       }
       break;
     case 42:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/cuatro_de_trebol.svg';
+        cardID = 42;
+        userCardPoints = 4;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/cuatro_de_trebol.svg';
+        cardID = 42;
+        cpuCardPoints = 4;
       }
       break;
     case 43:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/cinco_de_trebol.svg';
+        cardID = 43;
+        userCardPoints = 5;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/cinco_de_trebol.svg';
+        cardID = 43;
+        cpuCardPoints = 5;
       }
       break;
     case 44:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/seis_de_trebol.svg';
+        cardID = 44;
+        userCardPoints = 6;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/seis_de_trebol.svg';
+        cardID = 44;
+        cpuCardPoints = 6;
       }
       break;
     case 45:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/siete_de_trebol.svg';
+        cardID = 45;
+        userCardPoints = 7;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/siete_de_trebol.svg';
+        cardID = 45;
+        cpuCardPoints = 7;
       }
       break;
     case 46:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/ocho_de_trebol.svg';
+        cardID = 46;
+        userCardPoints = 8;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/ocho_de_trebol.svg';
+        cardID = 46;
+        cpuCardPoints = 8;
       }
       break;
     case 47:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/nueve_de_trebol.svg';
+        cardID = 47;
+        userCardPoints = 9;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/nueve_de_trebol.svg';
+        cardID = 47;
+        cpuCardPoints = 9;
       }
       break;
     case 48:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/diez_de_trebol.svg';
+        cardID = 48;
+        userCardPoints = 10;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/diez_de_trebol.svg';
+        cardID = 48;
+        cpuCardPoints = 10;
       }
       break;
     case 49:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/j_de_trebol.svg';
+        cardID = 49;
+        userCardPoints = 10;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/j_de_trebol.svg';
+        cardID = 49;
+        cpuCardPoints = 10;
       }
       break;
     case 50:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/q_de_trebol.svg';
+        cardID = 50;
+        userCardPoints = 10;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/q_de_trebol.svg';
+        cardID = 50;
+        cpuCardPoints = 10;
       }
       break;
     case 51:
       if (who == user) {
-        document.getElementById(userCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        userCardPoints = 3;
+        document.getElementById(userCardPosition).src = 'img/cards/trebol/k_de_trebol.svg';
+        cardID = 51;
+        userCardPoints = 10;
       } else if (who == cpu) {
-        document.getElementById(cpuCardPosition).src = 'img/cards/corazon/tres_de_corazon.svg';
-        cardID = 2;
-        cpuCardPoints = 3;
+        document.getElementById(cpuCardPosition).src = 'img/cards/trebol/k_de_trebol.svg';
+        cardID = 51;
+        cpuCardPoints = 10;
       }
       break;
   }

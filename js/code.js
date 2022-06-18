@@ -2,6 +2,7 @@
 var cardID;
 var random;
 var hand = 1;
+var round = 1;
 var cpu = 'cpu';
 var cpuCardPoints;
 var cpuCardPosition;
@@ -55,7 +56,7 @@ var cancel;
 
 function LoadingIncrementSeconds() {
   seconds += 1;
-  console.log('Loading ' + seconds + ' seg.');
+  console.log('Loaded in ' + seconds + ' seg.');
   if (seconds == 1) {
     displayBlock('game-stage');
     displayNone('loading-stage');
@@ -64,7 +65,7 @@ function LoadingIncrementSeconds() {
   }
 }
 
-function isPlayPressed() {
+function loadingGame() {
   playPressed = true;
   if (playPressed == true) {
     displayBlock('loading-stage');
@@ -694,9 +695,18 @@ function randomCard(who, repeatedID, repeatedID2, repeatedID3, repeatedID4, repe
 
 // PASSING HANDS ONE BY ONE
 function firstHand() {
+  console.log('--> Round ' + round + ' <--');
+  console.log('--> HAND N°' + hand + ' <--');
+  
   cpuAvoidNum = randomCard(cpu, cpuAvoidNum, userAvoidNum);
   userAvoidNum = randomCard(user, userAvoidNum, cpuAvoidNum);
   console.log('ID to avoid is: ' + userAvoidNum + ' and ' + cpuAvoidNum);
+
+  cpuPoints = cpuCardPoints;
+  userPoints = userCardPoints;
+  console.log('CPU POINTS: ' + cpuPoints);
+  console.log('USER POINTS: ' + userPoints);
+  showPoints();
 }
 
 function secondHand() {
@@ -712,6 +722,7 @@ function secondHand() {
   userPoints = userPoints + userCardPoints;
   console.log('CPU POINTS: ' + cpuPoints);
   console.log('USER POINTS: ' + userPoints);
+  showPoints();
   gameDecision();
   displayBlock('cpu-card-two');
   displayBlock('user-card-two');
@@ -729,6 +740,7 @@ function thirdHand() {
   userPoints = userPoints + userCardPoints;
   console.log('CPU POINTS: ' + cpuPoints);
   console.log('USER POINTS: ' + userPoints);
+  showPoints();
   gameDecision();
   displayBlock('cpu-card-three');
   displayBlock('user-card-three');
@@ -746,15 +758,23 @@ function fourthHand() {
   userPoints = userPoints + userCardPoints;
   console.log('CPU POINTS: ' + cpuPoints);
   console.log('USER POINTS: ' + userPoints);
+  showPoints();
   gameDecision();
   displayBlock('cpu-card-four');
   displayBlock('user-card-four');
 }
 
 function nextHand() {
-  hand = hand + 1;
-  console.log(' ');
-  console.log('--> HAND N°' + hand + ' <--');
+
+  if(hand >= 4) {
+    hand = 100;
+    console.log(' ');
+    console.log('All hands played!');
+  } else {
+    hand = hand + 1;
+    console.log(' ');
+    console.log('--> HAND N°' + hand + ' <--');
+  }
 
   if (hand == 2) {
     secondHand();
@@ -767,17 +787,32 @@ function nextHand() {
 
 function gameDecision() {
   if (hand >= 2 && hand <= 4) {
-    if (cpuPoints > 21) {
+    if ((hand == 4 && userPoints > cpuPoints) || cpuPoints > 21) {
       // userWin();
-    } else if ((hand == 4 && cpuPoints > userPoints) || userPoints > 21) {
-      // userLose();
+    } 
+    if ((hand == 4 && cpuPoints > userPoints) || userPoints > 21) {
+      // cpuWin();
     }
   }
 }
 
 function reset() {
   hand = 1;
+  round = round + 1;
   cpuPoints = 0;
   userPoints = 0;
   console.clear();
+}
+
+function showPoints() {
+  document.getElementById('user-points').innerHTML = userPoints;
+  document.getElementById('cpu-points').innerHTML = cpuPoints; 
+}
+
+function userWin() {
+    
+}
+
+function cpuWin() {
+
 }

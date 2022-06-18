@@ -24,7 +24,7 @@
                     <li>
                         <button id="play-button" onclick="displayFlex('loading-stage'); displayNone('main-stage'); displayNone('cpu-card-two');
                         displayNone('cpu-card-three'); displayNone('cpu-card-four'); displayNone('user-card-two'); displayNone('user-card-three');
-                        displayNone('user-card-four'); isPlayPressed(); firstHand();">
+                        displayNone('user-card-four'); loadingGame(); firstHand();">
                             Play
                         </button>
                     </li>
@@ -109,121 +109,143 @@
 
         <!-- GAME STAGE, FROM HERE YOU'LL SEE THE GAME SCREEN MADE TO PLAY. -->
         <div id="game-stage" class="screen-stage">
-            <div id="game-stage-background" class="row">
+            <div id="mobile-screen">
 
-                <!-- MAIN SCREEN OF THE GAME -->
-                <div class="col-12">
-
+            </div>
+            <div id="desktop-screen" class="row">
+                
+                <div id="aside-info" class="col-3">
+                    <div id="partial-result">
+                        <div id="bet-container">
+                            <p>YOUR BET: <span id="bet-amouont">0</span></p>
+                        </div>
+                        <div id="user-points-container">
+                            <p>USER POINTS: <span id="user-points">0</span></p>
+                        </div>
+                        <div id="cpu-points-container">
+                            <p>CPU POINTS: <span id="cpu-points">0</span></p>
+    
+                        </div>
+                    </div>
+                    <div id="final-result" style="display: none;">
+                        <div id="user-win" style="display: none;">
+                            <p>You win!!</p>
+                        </div>
+                        <div id="cpu-win" style="display: none;">
+                            <p>You lose!</p>
+                        </div>
+                    </div>   
+                </div> 
+                <div id="container-75" class="col-9">
                     <!-- HEADER -->
-                    <div id="top-menu" class="row" style="height: 80px; align-items:center; text-align:center;">
-                        <div class="col-2">
-                            <button id="mainmenu-button" onclick="displayNone('game-stage'); displayBlock('main-stage'); reset();">
-                                Main menu
-                            </button>
-                        </div>
-                        <div class="col-8">
-                            <h1>BLACKJACK</h1>
-                        </div>
-                        <div class="col-2">
-                            <span id="points">
-                                <p>POINTS</p>
-                            <p id="points-amount">0</p>
-                            </span>
-                            <p id="user-bust" style="color: rgb(171, 25, 25); display: none;">YOU BUST!</p>
-                            <p id="user-win" style="color: rgb(34, 186, 34); display: none;">YOU WIN!</p>
-                        </div>
+                <div id="top-menu" class="row">
+                    <div class="col-4">
+                        <!-- EMPTY SPACE TO CENTER THE ROW -->
                     </div>
-                    <!-- END OF HEADER -->
-
-                    <!-- CPU CARDS -->
-                    <div id="cpu-cards" class="row">
-                        <div class="col-3">
-                            <div id="cpu-card-one" class="card">
-                                <img id="cpu-one" src="img/cards/corazon/az_de_corazon.svg" alt="Az de corazon">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div id="cpu-card-two" class="card">
-                                <img id="cpu-two" src="img/cards/corazon/dos_de_corazon.svg" alt="Az de corazon">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div id="cpu-card-three" class="card">
-                                <img id="cpu-three" src="img/cards/corazon/tres_de_corazon.svg" alt="Az de corazon">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div id="cpu-card-four" class="card">
-                                <img id="cpu-four" src="img/cards/corazon/cuatro_de_corazon.svg" alt="Az de corazon">
-                            </div>
-                        </div>
+                    <div class="col-4" id="game-title" style="text-align: center;">
+                        <h1>BLACKJACK</h1>
+                        <h2>Made by Juanse</h2>
                     </div>
-                    <!-- END OF CPU CARDS -->
-
-                    <!-- BET INFORMATION -->
-                    <div id="bet" class="row">
-                        <div class="col-4">
-
-                        </div>
-                        <div class="col-4" style="text-align: center;">
-                            <p>BET</p>
-                            <p id="bet-amount">0</p>
-                        </div>
-                        <div class="col-4">
-
-                        </div>
-                    </div>
-                    <!-- END OF BET INFORMATION -->
                     
-                    <!-- USER CARDS -->
-                    <div id="user-cards" class="row">
-                        <div class="col-3">
-                            <div id="user-card-one" class="card">
-                                <img id="user-one" src="img/cards/diamante/az_de_diamante.svg">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div id="user-card-two" class="card">
-                                <img id="user-two" src="img/cards/diamante/dos_de_diamante.svg">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div id="user-card-three" class="card">
-                                <img id="user-three" src="img/cards/diamante/tres_de_diamante.svg">
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div id="user-card-four" class="card">
-                                <img id="user-four" src="img/cards/diamante/cuatro_de_diamante.svg">
-                            </div>
-                        </div>
+                    <div class="col-4" id="menu-button-container" style="text-align: right;">
+                        <button id="mainmenu-button" onclick="displayNone('game-stage'); displayBlock('main-stage'); reset();">
+                            <img src="img/menu.svg" alt="">
+                        </button>
                     </div>
-                    <!-- END OF USER CARDS -->
-                    
-                    <!-- GAME CHOICES -->
-                    <div id="game-choices" class="row">
-                        <div class="col-3">
-                            <button id="double" onclick="nextHand();">
-                                DOUBLE
-                            </button>
-                        </div>
-                        <div class="col-3">
-                            <button id="stand">
-                                STAND
-                            </button>
-                        </div>
-                        <div class="col-3">
-                            <button id="hit" onclick="nextHand();">
-                                HIT
-                            </button>
-                        </div>
-                        <div class="col-3" id="chips-container">
-                            <p>CHIPS:<span id="chips"> 0</span></p>
-                        </div>
-                    </div>
-                    <!-- END OF GAME CHOICES -->
                 </div>
-                <!-- END OF MAIN SCREEN OF THE GAME -->
+                <!-- END OF HEADER -->
+
+                <!-- CPU CARDS -->
+                <div id="cpu-cards" class="row">
+                    
+                    <div class="col-3">
+                        <div id="cpu-card-one" class="card">
+                            <img id="cpu-one" src="img/cards/corazon/az_de_corazon.svg" alt="Az de corazon">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div id="cpu-card-two" class="card">
+                            <img id="cpu-two" src="img/cards/corazon/dos_de_corazon.svg" alt="Az de corazon">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div id="cpu-card-three" class="card">
+                            <img id="cpu-three" src="img/cards/corazon/tres_de_corazon.svg" alt="Az de corazon">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div id="cpu-card-four" class="card">
+                            <img id="cpu-four" src="img/cards/corazon/cuatro_de_corazon.svg" alt="Az de corazon">
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- END OF CPU CARDS -->
+
+                <!-- MID SPACE -->
+                <div id="mid-space" class="row">
+                    
+                    <div class="col-12">
+                        <p></p>
+                    </div>
+                    
+                </div>
+                <!-- END OF MID SPACE -->
+
+                <!-- USER CARDS -->
+                <div id="user-cards" class="row">
+                    
+                    <div class="col-3">
+                        <div id="user-card-one" class="card">
+                            <img id="user-one" src="img/cards/diamante/az_de_diamante.svg">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div id="user-card-two" class="card">
+                            <img id="user-two" src="img/cards/diamante/dos_de_diamante.svg">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div id="user-card-three" class="card">
+                            <img id="user-three" src="img/cards/diamante/tres_de_diamante.svg">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div id="user-card-four" class="card">
+                            <img id="user-four" src="img/cards/diamante/cuatro_de_diamante.svg">
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- END OF USER CARDS -->
+
+                <!-- GAME CHOICES -->
+                <div id="game-choices" class="row">
+                    
+                    <div class="col-3" style="text-align: center;">
+                        <button id="double" onclick="nextHand();">
+                            DOUBLE
+                        </button>
+                    </div>
+                    <div class="col-3" style="text-align: center;">
+                        <button id="stand">
+                            STAND
+                        </button>
+                    </div>
+                    <div class="col-3" style="text-align: center;">
+                        <button id="hit" onclick="nextHand();">
+                            HIT
+                        </button>
+                    </div>
+                    <div class="col-3" style="text-align: center;">
+                        <button id="bet-button">
+                            BET
+                        </button>
+                    </div>
+                    
+                </div>
+                <!-- END OF GAME CHOICES -->
+                </div>           
             </div>
         </div>
         <!-- END OF GAME STAGE -->

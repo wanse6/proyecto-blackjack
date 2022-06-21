@@ -185,6 +185,16 @@ button {
     justify-content: center;
 }
 
+#rounds-played-container {
+    display: flex;
+    justify-content: center;
+}
+
+#rounds-won-container {
+    display: flex;
+    justify-content: center;
+}
+
 #aside-info {
     margin: 1% 0;
     border: 2px solid white;

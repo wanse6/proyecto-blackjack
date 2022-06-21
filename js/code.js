@@ -3,6 +3,8 @@ var cardID;
 var random;
 var hand = 1;
 var round = 1;
+var roundWon = 0;
+var roundLose = 0;
 var cpu = 'cpu';
 var cpuCardPoints;
 var cpuCardPosition;
@@ -723,9 +725,10 @@ function secondHand() {
   console.log('CPU POINTS: ' + cpuPoints);
   console.log('USER POINTS: ' + userPoints);
   showPoints();
-  gameDecision();
   displayBlock('cpu-card-two');
   displayBlock('user-card-two');
+  gameDecision();
+
 }
 
 function thirdHand() {
@@ -741,9 +744,10 @@ function thirdHand() {
   console.log('CPU POINTS: ' + cpuPoints);
   console.log('USER POINTS: ' + userPoints);
   showPoints();
-  gameDecision();
   displayBlock('cpu-card-three');
   displayBlock('user-card-three');
+  gameDecision();
+
 }
 
 function fourthHand() {
@@ -759,9 +763,10 @@ function fourthHand() {
   console.log('CPU POINTS: ' + cpuPoints);
   console.log('USER POINTS: ' + userPoints);
   showPoints();
-  gameDecision();
   displayBlock('cpu-card-four');
   displayBlock('user-card-four');
+  gameDecision();
+
 }
 
 function nextHand() {
@@ -788,16 +793,17 @@ function nextHand() {
 function gameDecision() {
   if (hand >= 2 && hand <= 4) {
     if ((hand == 4 && userPoints > cpuPoints) || cpuPoints > 21) {
-      // userWin();
+       userWin();
     } 
     if ((hand == 4 && cpuPoints > userPoints) || userPoints > 21) {
-      // cpuWin();
+       cpuWin();
     }
   }
 }
 
 function reset() {
   hand = 1;
+  document.getElementById('rounds-played').innerText = round;
   round = round + 1;
   cpuPoints = 0;
   userPoints = 0;
@@ -810,9 +816,33 @@ function showPoints() {
 }
 
 function userWin() {
-    
+  document.getElementById('rounds-won').innerText = roundWon;
+  roundWon = roundWon + 1;
+  reset();
+  loadingGame(); 
+  displayFlex('loading-stage'); 
+  displayNone('game-stage'); 
+  displayNone('cpu-card-two');
+  displayNone('cpu-card-three'); 
+  displayNone('cpu-card-four'); 
+  displayNone('user-card-two'); 
+  displayNone('user-card-three');
+  displayNone('user-card-four');
+  
+  firstHand();
 }
 
 function cpuWin() {
+  reset();
+  loadingGame(); 
+  displayFlex('loading-stage'); 
+  displayNone('game-stage'); 
+  displayNone('cpu-card-two');
+  displayNone('cpu-card-three'); 
+  displayNone('cpu-card-four'); 
+  displayNone('user-card-two'); 
+  displayNone('user-card-three');
+  displayNone('user-card-four'); 
 
+  firstHand();
 }

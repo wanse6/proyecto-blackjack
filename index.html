@@ -133,6 +133,9 @@
                         <div id="rounds-won-container">
                             <p>ROUNDS WON: <span id="rounds-won">0</span></p>
                         </div>
+                        <div id="rounds-lose-container">
+                            <p>ROUNDS LOSE: <span id="rounds-lose">0</span></p>
+                        </div>
                     </div>
                     <div id="final-result" style="display: none;">
                         <div id="user-win" style="display: none;">
@@ -230,17 +233,17 @@
                 <div id="game-choices" class="row">
                     
                     <div class="col-3" style="text-align: center;">
-                        <button id="double" onclick="nextHand();">
+                        <button id="double" onclick="nextUserHand();">
                             DOUBLE
                         </button>
                     </div>
                     <div class="col-3" style="text-align: center;">
-                        <button id="stand">
+                        <button id="stand" onclick="disableButtons(); cpuTurn();">
                             STAND
                         </button>
                     </div>
                     <div class="col-3" style="text-align: center;">
-                        <button id="hit" onclick="nextHand();">
+                        <button id="hit" onclick="nextUserHand();">
                             HIT
                         </button>
                     </div>

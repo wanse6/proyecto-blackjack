@@ -75,7 +75,7 @@ function LoadingIncrementSeconds() {
 function loadingGame() {
   playPressed = true;
   if (playPressed == true) {
-    displayBlock('loading-stage');
+    displayFlex('loading-stage');
     cancel = setInterval(LoadingIncrementSeconds, 1000);
   }
 }
@@ -257,7 +257,7 @@ function gameDecision() {
     disableButtons();
     
     console.log('BLACKJACK - USER WIN');
-    userTimeout = setTimeout(userWin, 5000);
+    userTimeout = setTimeout(userWin, 3000);
     userWon = true;
   }
   if(cpuHand == 2 && cpuPoints == 21) {
@@ -265,7 +265,7 @@ function gameDecision() {
     document.getElementById('rounds-lose').innerText = roundLose;
     disableButtons();
     console.log('BLACKJACK - USER LOSE');
-    cpuTimeout = setTimeout(cpuWin, 5000);
+    cpuTimeout = setTimeout(cpuWin, 3000);
   }
   if(cpuHand <= 4 && cpuPoints > 21) {
     roundWon++;
@@ -320,6 +320,13 @@ function gameDecision() {
     console.log(' USER WIN');
     userTimeout = setTimeout(userWin, 2000);
     userWon = true;
+  }
+  if((hand == 4 && cpuHand == 1) && userPoints < 21) {
+    cpuTurn();
+  }
+  if(userPoints == 21 && (hand <= 4 && hand > 2) && cpuHand == 1) {
+    disableButtons();
+    cpuTurn();
   }
 }
 

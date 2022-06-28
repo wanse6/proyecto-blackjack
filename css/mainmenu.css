@@ -1,0 +1,262 @@
+/* --- MAIN MENU STAGE --- */
+
+#main-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#main-stage-container {
+    width: 50%;
+    height: 95%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.title-container {
+    display: flex;
+  /*   border:1px solid red; */
+    height: 10%;
+    align-items: center;
+  }
+  
+  svg {
+      display: block;
+      font: 9.5em 'Montserrat';
+      width: 600px;
+      height: 300px;
+      margin: 0 auto;
+  }
+  
+  .text-copy {
+      fill: none;
+      stroke: white;
+      stroke-dasharray: 6% 29%;
+      stroke-width: 5px;
+      stroke-dashoffset: 0%;
+      animation: stroke-offset 5.5s infinite linear;
+  }
+  
+  .text-copy:nth-child(1){
+      stroke: #241b21;
+      animation-delay: -1;
+  }
+  
+  .text-copy:nth-child(2){
+      stroke: #393034;
+      animation-delay: -2s;
+  }
+  
+  .text-copy:nth-child(3){
+      stroke: #726a6c;
+      animation-delay: -3s;
+  }
+  
+  .text-copy:nth-child(4){
+      stroke: #3a3133;
+      animation-delay: -4s;
+  }
+  
+  .text-copy:nth-child(5){
+      stroke: #bcbab5;
+      animation-delay: -5s;
+  }
+  
+  @keyframes stroke-offset{
+      100% {stroke-dashoffset: -35%;}
+  }
+
+#play-button-container, #credits-button-container, #howtoplay-button-container {
+    position: relative;
+    display: inline-flex;
+    height: 78px;
+    width: 270px;
+    margin: 0 23px;
+    perspective: 1000px;
+  }
+
+#play-button-container a, #credits-button-container a, #howtoplay-button-container a{
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+  #play-button-container a:before,
+  #play-button-container a:after{
+    position: absolute;
+    content: "PLAY";
+    height: 55px;
+    width: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  #howtoplay-button-container a:before,
+  #howtoplay-button-container a:after {
+    position: absolute;
+    content: "HOW TO PLAY";
+    height: 55px;
+    width: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  #credits-button-container a:before,
+  #credits-button-container a:after {
+    position: absolute;
+    content: "CREDITS";
+    height: 55px;
+    width: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  #play-button-container a:before, #credits-button-container a:before, #howtoplay-button-container a:before{
+    color: #fff;
+    background: #000;
+    transform: rotateY(0deg) translateZ(25px);
+  }
+  #play-button-container a:after, #credits-button-container a:after, #howtoplay-button-container a:after{
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+  }
+  #play-button-container a:hover, #credits-button-container a:hover, #howtoplay-button-container a:hover{
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+
+#mainmenu-options li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainmenu-options ul {
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+}
+
+#made-by {
+    color: #535c68;
+    margin-bottom: 2%;
+}
+
+#made-by a {
+    color: #293139;
+}
+
+#main-stage-footer {
+    position: sticky    ;
+    top: 90%;
+
+}
+
+:root {
+    --bg: #dcdde1;     
+    --color-icon: #535c68;  
+    --social-icon1: #e4405f;
+    --social-icon2: #3b5999;
+    --social-icon3: #e4405f;
+    --social-icon4: #cd201f;
+    --social-icon5: #0077B5;  
+  }
+
+  #main-stage-footer section {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    z-index: -10;
+  } 
+  
+  .icon-list {
+    width: 100%;
+    max-width: 25rem;
+    padding: 0rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .icon-item {
+    list-style: none
+  }
+  
+  .icon-link {  
+    display: inline-flex;
+    font-size: 3rem;  
+    text-decoration: none;  
+    color: var(--color-icon);
+    width: 6rem;
+    height: 6rem;   
+    transition: .5s linear;
+    position: relative;
+    z-index: 1;
+    margin: auto
+  }
+  
+  .icon-link:hover {
+    color: #fff;
+  }
+  
+  .icon-link i {
+    margin: auto;    
+  }
+  
+  .icon-link::before {  
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 6rem;
+    height: 6rem;
+    background: #000;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0);
+    transition: 0.3s cubic-bezier(.95, .32, .37, 1.21);
+  }
+    
+  .icon-link:hover::before {  
+    transform: scale(1);
+  }
+  
+  .icon-item:nth-child(1) a:hover:before { 
+    background: var(--social-icon1); 
+  }
+  
+  .icon-item:nth-child(2) a:hover:before { 
+    background: var(--social-icon2); 
+  }
+  
+  .icon-item:nth-child(3) a:hover:before { 
+    background: #161b22; 
+  }
+  
+  .icon-item:nth-child(4) a:hover:before { 
+    background: var(--social-icon4); 
+  }
+  
+  .icon-item:nth-child(5) a:hover:before { 
+    background: var(--social-icon5); 
+  }

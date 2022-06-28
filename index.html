@@ -9,17 +9,20 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/mainmenu.css">
+    <link rel="stylesheet" href="css/game.css">
     <script src="https://kit.fontawesome.com/09697fd8ed.js" crossorigin="anonymous"></script>
     <script src="js/code.js"></script>
     <script src="js/random.js"></script>
+    <script src="js/sidebar.js"></script>
     <link rel="icon" type="image/x-icon" href="img/logo.ico">
     <title>Blackjack</title>
 </head>
 
 <body id="body">
     <!-- GLOBAL PAGE CONTAINER -->
-    <div class="container-fluid" id="global-container">
-
+    <div id="global-container">
 
 
 
@@ -99,7 +102,18 @@
 
         <!-- LOADING STAGE -->
         <div id="loading-stage" class="screen-stage">
-            <p style="color: aliceblue; text-align: center;">loading...</p>
+            <div class="preloader-1">                
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+                <span class="line line-4"></span>
+                <span class="line line-5"></span>
+                <span class="line line-6"></span>
+                <span class="line line-7"></span>
+                <span class="line line-8"></span>
+                <span class="line line-9"></span>
+                <div>Loading</div>
+              </div>
 
             <!-- LOADING ALL CARDS IMAGES -->
             <div style="display: none;">
@@ -168,60 +182,22 @@
             <div id="mobile-screen">
 
             </div>
-            <div id="desktop-screen" class="row">
+            <div id="desktop-screen">
 
-                <div id="aside-info" class="col-3">
-                    <div id="partial-result">
-                        <div id="bet-container">
-                            <p>YOUR BET: <span id="bet-amount">0</span></p>
-                        </div>
-                        <div id="user-points-container">
-                            <p>USER POINTS: <span id="user-points">0</span></p>
-                        </div>
-                        <div id="cpu-points-container">
-                            <p>CPU POINTS: <span id="cpu-points">0</span></p>
-
-                        </div>
-                        <div id="rounds-played-container">
-                            <p>ROUNDS PLAYED: <span id="rounds-played">0</span></p>
-                        </div>
-                        <div id="rounds-won-container">
-                            <p>ROUNDS WON: <span id="rounds-won">0</span></p>
-                        </div>
-                        <div id="rounds-lose-container">
-                            <p>ROUNDS LOSE: <span id="rounds-lose">0</span></p>
-                        </div>
-                    </div>
-                    <div id="final-result" style="display: none;">
-                        <div id="user-win" style="display: none;">
-                            <p>You win!!</p>
-                        </div>
-                        <div id="cpu-win" style="display: none;">
-                            <p>You lose!</p>
-                        </div>
-                    </div>
+                
+            <div id="screen-container">
+                <div id="menu-container">
+                    <span style="font-size:40px;cursor:pointer;color: #656464;" onclick="openNav()">&#9776;</span>
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="#" onclick=" displayNone('game-stage'); displayFlex('main-stage'); reset();">Menu</a>
+                        <a href="#">Help</a>
+                      </div>
                 </div>
-                <div id="container-75" class="col-9">
-                    <!-- HEADER -->
-                    <div id="top-menu" class="row">
-                        <div class="col-4">
-                            <!-- EMPTY SPACE TO CENTER THE ROW -->
-                        </div>
-                        <div class="col-4" id="game-title" style="text-align: center;">
-                            <h1>BLACKJACK</h1>
-                            <h2>Made by Juanse</h2>
-                        </div>
-
-                        <div class="col-4" id="menu-button-container" style="text-align: right;">
-                            <button id="mainmenu-button"
-                                onclick="displayNone('game-stage'); displayFlex('main-stage'); reset();">
-                                <img src="img/menu.svg" alt="">
-                            </button>
-                        </div>
-                    </div>
-                    <!-- END OF HEADER -->
-
-                    <!-- CPU CARDS -->
+                <div id="table-container">
+                    <div id="table">
+                        
+                        <!-- CPU CARDS -->
                     <div id="cpu-cards" class="row">
 
                         <div class="col-3">
@@ -249,12 +225,20 @@
                     <!-- END OF CPU CARDS -->
 
                     <!-- MID SPACE -->
-                    <div id="mid-space" class="row">
-
-                        <div class="col-12">
-                            <p></p>
+                    <div id="mid-space">
+                        <div id="cpu-points-container">
+                            <div class="points-wrapper">
+                                <span id="cpu-points" style="color: #c2c0c0;">0</span>
+                            </div>
                         </div>
-
+                        <div id="bet-amount-container">
+                            <h5>BET: <span>$</span><span id="bet-amount">0</span></h5>
+                        </div>
+                        <div id="user-points-container">
+                            <div class="points-wrapper">
+                                <span id="user-points" style="color: #c2c0c0;">0</span>
+                            </div>
+                        </div>
                     </div>
                     <!-- END OF MID SPACE -->
 
@@ -285,33 +269,32 @@
                     </div>
                     <!-- END OF USER CARDS -->
 
-                    <!-- GAME CHOICES -->
-                    <div id="game-choices" class="row">
-
-                        <div class="col-3" style="text-align: center;">
-                            <button id="double" onclick="nextUserHand();">
-                                DOUBLE
-                            </button>
-                        </div>
-                        <div class="col-3" style="text-align: center;">
-                            <button id="stand" onclick="disableButtons(); cpuTurn();">
-                                STAND
-                            </button>
-                        </div>
-                        <div class="col-3" style="text-align: center;">
-                            <button id="hit" onclick="nextUserHand();">
-                                HIT
-                            </button>
-                        </div>
-                        <div class="col-3" style="text-align: center;">
-                            <button id="bet-button">
-                                BET
-                            </button>
-                        </div>
-
-                    </div>
-                    <!-- END OF GAME CHOICES -->
+                    </div>  
                 </div>
+            </div>
+            <div id="buttons-container">
+                <div id="double-container" class="game-button-container">
+                    <button id="double-button" class="game-button" onclick="nextUserHand();">
+                        DOUBLE
+                    </button>
+                </div>
+                <div id="stand-container" class="game-button-container">
+                    <button id="stand-button" class="game-button" onclick="disableButtons(); cpuTurn();">
+                        STAND
+                    </button>
+                </div>
+                <div id="hit-container" class="game-button-container">
+                    <button id="hit-button" class="game-button" onclick="nextUserHand();">
+                        HIT
+                    </button>
+                </div>
+                <div id="bet-container" class="game-button-container">
+                    <button id="bet-button" class="game-button">
+                        BET
+                    </button>
+                </div>
+            </div>
+
             </div>
         </div>
         <!-- END OF GAME STAGE -->

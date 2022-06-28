@@ -84,7 +84,7 @@ function loadingGame() {
 
 // PASSING HANDS ONE BY ONE
 function firstHand() {
-  document.getElementById("stand").disabled = true;
+  document.getElementById("stand-button").disabled = true;
 
   console.log('--> Round ' + ++round + ' <--');
   --round;
@@ -104,7 +104,7 @@ function firstHand() {
 }
 
 function userSecondHand() {
-  document.getElementById("stand").disabled = false;
+  document.getElementById("stand-button").disabled = false;
   userPoints = userCardPoints;
 
   // get the repeated IDs cards
@@ -246,14 +246,14 @@ function nextCpuHand() {
 function gameDecision() {
   if(hand <= 4 && userPoints > 21) {
     roundLose++;
-    document.getElementById('rounds-lose').innerText = roundLose;
+    // document.getElementById('rounds-lose').innerText = roundLose;
     disableButtons();
     console.log('USER BUSTED - USER LOSE');
     cpuTimeout = setTimeout(cpuWin, 2000);
   }
   if(hand == 2 && userPoints == 21) {
     roundWon++;
-    document.getElementById('rounds-won').innerText = roundWon;
+    // document.getElementById('rounds-won').innerText = roundWon;
     disableButtons();
     
     console.log('BLACKJACK - USER WIN');
@@ -262,14 +262,14 @@ function gameDecision() {
   }
   if(cpuHand == 2 && cpuPoints == 21) {
     roundLose++;
-    document.getElementById('rounds-lose').innerText = roundLose;
+    // document.getElementById('rounds-lose').innerText = roundLose;
     disableButtons();
     console.log('BLACKJACK - USER LOSE');
     cpuTimeout = setTimeout(cpuWin, 3000);
   }
   if(cpuHand <= 4 && cpuPoints > 21) {
     roundWon++;
-    document.getElementById('rounds-won').innerText = roundWon;
+    // document.getElementById('rounds-won').innerText = roundWon;
     disableButtons();
     
     console.log('CPU BUSTED - USER WIN');
@@ -278,21 +278,21 @@ function gameDecision() {
   }
   if((cpuHand == 2 && cpuPoints <= 21) && cpuPoints > userPoints) {
     roundLose++;
-    document.getElementById('rounds-lose').innerText = roundLose;
+    // document.getElementById('rounds-lose').innerText = roundLose;
     disableButtons();
     console.log('USER LOSE');
     cpuTimeout = setTimeout(cpuWin, 2000);
   }
   if((cpuHand == 3 && cpuPoints <= 21) && cpuPoints > userPoints) {
     roundLose++;
-    document.getElementById('rounds-lose').innerText = roundLose;
+    // document.getElementById('rounds-lose').innerText = roundLose;
     disableButtons();
     console.log('USER LOSE');
     cpuTimeout = setTimeout(cpuWin, 2000);
   }
   if((cpuHand == 4 && cpuPoints <= 21) && cpuPoints > userPoints) {
     roundLose++;
-    document.getElementById('rounds-lose').innerText = roundLose;
+    // document.getElementById('rounds-lose').innerText = roundLose;
     disableButtons();
     console.log('USER LOSE');
     cpuTimeout = setTimeout(cpuWin, 2000);
@@ -314,7 +314,7 @@ function gameDecision() {
   }
   if(userPoints > cpuPoints && cpuHand == 4) {
     roundWon++;
-    document.getElementById('rounds-won').innerText = roundWon;
+    // document.getElementById('rounds-won').innerText = roundWon;
     disableButtons();
     
     console.log(' USER WIN');
@@ -340,12 +340,13 @@ function reset() {
   clearInterval(cpuTurntimeout);
   clearTimeoutFunc();
   allowButtons();
+  if(hand != 1) round = round + 1;
   hand = 1;
   cpuHand = 1;
-  round = round + 1;
-  document.getElementById('rounds-played').innerText = round;
+  // document.getElementById('rounds-played').innerText = round;
   cpuPoints = 0;
   userPoints = 0;
+  closeNav();
   console.clear();
 }
 
@@ -397,16 +398,16 @@ function clearCards() {
 
 function disableButtons() {
   document.getElementById("bet-button").disabled = true;
-  document.getElementById("hit").disabled = true;
-  document.getElementById("stand").disabled = true;
-  document.getElementById("double").disabled = true;
+  document.getElementById("hit-button").disabled = true;
+  document.getElementById("stand-button").disabled = true;
+  document.getElementById("double-button").disabled = true;
   return true;
 }
 
 function allowButtons() {
   document.getElementById("bet-button").disabled = false;
-  document.getElementById("hit").disabled = false;
-  document.getElementById("stand").disabled = false;
-  document.getElementById("double").disabled = false;
+  document.getElementById("hit-button").disabled = false;
+  document.getElementById("stand-button").disabled = false;
+  document.getElementById("double-button").disabled = false;
   return false;
 }

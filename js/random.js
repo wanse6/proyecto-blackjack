@@ -42,11 +42,19 @@ function randomCard(who, repeatedID, repeatedID2, repeatedID3, repeatedID4, repe
         if (who == user) {
           document.getElementById(userCardPosition).src = 'img/cards/corazon/az_de_corazon.svg';
           cardID = 0;
-          userCardPoints = 11;
+          if(userPoints < 11){
+            userCardPoints = 11;
+          } else if(userPoints >= 11){
+            userCardPoints = 1;
+          }
         } else if (who == cpu) {
           document.getElementById(cpuCardPosition).src = 'img/cards/corazon/az_de_corazon.svg';
           cardID = 0;
-          cpuCardPoints = 11;
+          if(cpuPoints < 11){
+            cpuCardPoints = 11;
+          } else if(cpuPoints >= 11) {
+            cpuCardPoints = 1;
+          }
         }
         break;
       case 1:
@@ -185,11 +193,19 @@ function randomCard(who, repeatedID, repeatedID2, repeatedID3, repeatedID4, repe
         if (who == user) {
           document.getElementById(userCardPosition).src = 'img/cards/diamante/az_de_diamante.svg';
           cardID = 13;
-          userCardPoints = 11;
+          if(userPoints < 11){
+            userCardPoints = 11;
+          } else if(userPoints >= 11){
+            userCardPoints = 1;
+          }
         } else if (who == cpu) {
           document.getElementById(cpuCardPosition).src = 'img/cards/diamante/az_de_diamante.svg';
           cardID = 13;
-          cpuCardPoints = 11;
+          if(cpuPoints < 11){
+            cpuCardPoints = 11;
+          } else if(cpuPoints >= 11) {
+            cpuCardPoints = 1;
+          }
         }
         break;
       case 14:
@@ -328,11 +344,19 @@ function randomCard(who, repeatedID, repeatedID2, repeatedID3, repeatedID4, repe
         if (who == user) {
           document.getElementById(userCardPosition).src = 'img/cards/pica/az_de_pica.svg';
           cardID = 26;
-          userCardPoints = 11;
+          if(userPoints < 11){
+            userCardPoints = 11;
+          } else if(userPoints >= 11){
+            userCardPoints = 1;
+          }
         } else if (who == cpu) {
           document.getElementById(cpuCardPosition).src = 'img/cards/pica/az_de_pica.svg';
           cardID = 26;
-          cpuCardPoints = 11;
+          if(cpuPoints < 11){
+            cpuCardPoints = 11;
+          } else if(cpuPoints >= 11) {
+            cpuCardPoints = 1;
+          }
         }
         break;
       case 27:
@@ -471,11 +495,19 @@ function randomCard(who, repeatedID, repeatedID2, repeatedID3, repeatedID4, repe
         if (who == user) {
           document.getElementById(userCardPosition).src = 'img/cards/trebol/az_de_trebol.svg';
           cardID = 39;
-          userCardPoints = 11;
+          if(userPoints < 11){
+            userCardPoints = 11;
+          } else if(userPoints >= 11){
+            userCardPoints = 1;
+          }
         } else if (who == cpu) {
           document.getElementById(cpuCardPosition).src = 'img/cards/trebol/az_de_trebol.svg';
           cardID = 39;
-          cpuCardPoints = 11;
+          if(cpuPoints < 11){
+            cpuCardPoints = 11;
+          } else if(cpuPoints >= 11) {
+            cpuCardPoints = 1;
+          }
         }
         break;
       case 40:

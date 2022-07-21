@@ -259,6 +259,7 @@ function reset() {
   // document.getElementById('rounds-played').innerText = round;
   cpuPoints = 0;
   userPoints = 0;
+  userWon = false;
   closeNav();
   console.clear();
 }

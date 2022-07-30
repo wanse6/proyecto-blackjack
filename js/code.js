@@ -1,6 +1,6 @@
 // GLOBAL VARIABLES
-const COUNTDOWN = 4500;
-const CPU_COUNTDOWN = 5000; // must be always higher than COUNTDOWN.
+const COUNTDOWN = 2500;
+const CPU_COUNTDOWN = 3000; // must be always higher than COUNTDOWN.
 var cardID;
 var random;
 var hand = 1;

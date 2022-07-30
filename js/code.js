@@ -1,4 +1,6 @@
 // GLOBAL VARIABLES
+const COUNTDOWN = 2500;
+const CPU_COUNTDOWN = 3000; // must be always higher than COUNTDOWN.
 var cardID;
 var random;
 var hand = 1;
@@ -13,7 +15,7 @@ var cpuAvoidNum;
 var cpuAvoidNum1;
 var cpuAvoidNum2;
 var cpuAvoidNum3;
-var cpuPoints;
+var cpuPoints = 0;
 var cpuTimeout;
 var cpuTurntimeout;
 var tieTimeout;
@@ -24,36 +26,11 @@ var userAvoidNum;
 var userAvoidNum1;
 var userAvoidNum2;
 var userAvoidNum3;
-var userPoints;
+var userPoints = 0;
 var userTimeout;
 var userWon = false;
-
-
-// INITIALIZING DISPLAY FUNCTIONS
-function displayNone(id) {
-  document.getElementById(id).style.display = "none";
-}
-
-function displayBlock(id) {
-  document.getElementById(id).style.display = "block";
-}
-
-function displayInline(id) {
-  document.getElementById(id).style.display = "inline";
-}
-
-function displayInlineBlock(id) {
-  document.getElementById(id).style.display = "inline-block";
-}
-
-function displayFlex(id) {
-  document.getElementById(id).style.display = "flex";
-}
-
-function displayInherit(id) {
-  document.getElementById(id).style.display = "inherit";
-}
-
+var stopIt = false;
+var stopCpu = false;
 
 
 // LOADING SCREEN
@@ -204,13 +181,17 @@ function cpuFourthHand() {
 function nextUserHand() {
 
   if (hand >= 4) {
-    hand = 100;
+    hand = 100; // 100 as a reserved number.
     console.log(' ');
     console.log('All hands played!');
+    console.log('User hand: ' + hand);
+    console.log('Cpu hand: ' + cpuHand);
   } else {
     hand = hand + 1;
     console.log(' ');
     console.log('--> HAND N°' + hand + ' <--');
+    console.log('User hand: ' + hand);
+    console.log('Cpu hand: ' + cpuHand);
   }
 
   if (hand == 2) {
@@ -225,13 +206,17 @@ function nextUserHand() {
 function nextCpuHand() {
 
   if (cpuHand >= 4) {
-    cpuHand = 100;
+    cpuHand = 100; // 100 as a reserved number.
     console.log(' ');
     console.log('All hands played!');
+    console.log('User hand: ' + hand);
+    console.log('Cpu hand: ' + cpuHand);
   } else {
     cpuHand = cpuHand + 1;
     console.log(' ');
     console.log('--> HAND N°' + cpuHand + ' <--');
+    console.log('User hand: ' + hand);
+    console.log('Cpu hand: ' + cpuHand);
   }
 
   if (cpuHand == 2) {
@@ -250,6 +235,8 @@ function clearTimeoutFunc() {
 }
 
 function reset() {
+  stopIt = false;
+  stopCpu = false;
   clearInterval(cpuTurntimeout);
   clearTimeoutFunc();
   allowButtons();
@@ -298,7 +285,7 @@ function push() {
 
 function cpuTurn() {
   disableButtons();
-  cpuTurntimeout = setInterval(nextCpuHand, 3000);
+  cpuTurntimeout = setInterval(nextCpuHand, CPU_COUNTDOWN);
 }
 
 function clearCards() {
